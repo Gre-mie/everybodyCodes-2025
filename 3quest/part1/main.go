@@ -1,3 +1,5 @@
+// https://everybody.codes/event/2025/quests/3
+
 package main
 
 import (
