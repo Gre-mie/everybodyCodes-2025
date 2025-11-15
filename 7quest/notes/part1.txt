@@ -1,0 +1,15 @@
+Elvarxar,Elvargnaris,Gaergnaris,Gaerxar,Gaerxar,Elvarxar,Azgnaris,Azxar,Azxar
+
+n > a
+G > a
+g > n
+z > g,b
+v > a
+a > r,b
+l > b
+e > r
+E > l
+i > s
+A > z
+x > a
+r > i,x,g
