@@ -1,5 +1,3 @@
-// https://everybody.codes/event/2025/quests/11
-
 package main
 
 import (
@@ -26,36 +24,38 @@ func (g Group) checksum() int {
 }
 
 func main() {
-	var group Group = getGroup("../notes/part1.txt")
+	var group Group = getGroup("../notes/part2.txt")
 	if len(group) < 1 {fmt.Printf("WARNING: group array is empty\n")}
 
-	total_rounds := 10
 	rounds:=0
-	swaps := true
-	for rounds < total_rounds {
-		if swaps {
+	swapsP1 := true
+	swapsP2 := true
+	for swapsP2 {
+		if swapsP1 {
 			// first stage
-			swaps = false
+			swapsP1 = false
 			for i:=0; i<len(group)-1; i++ {
 				j:=i+1
 				if group[i] > group[j] {
 					group.move(i, j)
-					swaps = true
+					swapsP1 = true
 				}
 			}
 		}
-		if !swaps {
+		if !swapsP1 {
 			// second stage
+			swapsP2 = false
 			for i:=0; i<len(group)-1; i++ {
 				j:=i+1
 				if group[i] < group[j] {
 					group.move(j, i)
+					swapsP2 = true
 				}
 			}
 		}
-		rounds++
+		if swapsP2 {rounds++}
 	}
-	fmt.Println("Result:", group.checksum())
+	fmt.Println("Result:", rounds)
 
 }
 
