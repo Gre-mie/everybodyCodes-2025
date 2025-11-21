@@ -9,9 +9,9 @@ import (
 )
 
 func main() {
-	var current_state [][]string = structureData("../notes/part1.txt")
+	var current_state [][]string = structureData("../notes/part2.txt")
 
-	rounds := 10
+	rounds := 2025
 	var counts []int = make([]int, 0, rounds)
 	for i:=0; i<rounds; i++ {
 		current_state = nextState(current_state) // alters current state
